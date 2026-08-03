@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=64", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hw3-imitation-learning"
+version = "0.1.0"
+description = "HW3 – Imitation learning with the SO-100 robot arm"
+requires-python = ">=3.10"
+dependencies = [
+    "torch",
+    "torchvision",
+    "zarr",
+    "opencv-python",
+    "dm-control",
+    "pyquaternion",
+]
+
+[tool.setuptools.packages.find]
+include = ["so101_gym*", "hw3*"]
+
+[tool.setuptools.package-data]
+so101_gym = ["assets/**/*"]
+hw3 = ["keymap.json"]

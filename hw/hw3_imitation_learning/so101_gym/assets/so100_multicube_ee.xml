@@ -1,0 +1,55 @@
+<mujoco>
+    <include file="scene_so100.xml" />
+
+    <include file="trs_so_arm100/so_arm100_ee.xml" />
+    <worldbody>
+
+        <!-- Red cube (slot 0) -->
+        <body name="box_red" pos="-0.20 0.40 0.05">
+            <joint name="red_box_joint" type="free" frictionloss="0.01" />
+            <inertial pos="0 0 0" mass="0.05" diaginertia="0.002 0.002 0.002" />
+            <geom condim="4" solimp="2 1 0.01" solref="0.01 1" friction="1 0.005 0.0001" pos="0 0 0"
+                size="0.02 0.02 0.02" type="box" name="red_box" rgba="1 0 0 1" />
+            <site name="cube_red_site" pos="0.01 0.01 0.01" />
+        </body>
+
+        <!-- Green cube (slot 1) -->
+        <body name="box_green" pos="-0.20 0.56 0.05">
+            <joint name="green_box_joint" type="free" frictionloss="0.01" />
+            <inertial pos="0 0 0" mass="0.05" diaginertia="0.002 0.002 0.002" />
+            <geom condim="4" solimp="2 1 0.01" solref="0.01 1" friction="1 0.005 0.0001" pos="0 0 0"
+                size="0.02 0.02 0.02" type="box" name="green_box" rgba="0 0.8 0 1" />
+            <site name="cube_green_site" pos="0.01 0.01 0.01" />
+        </body>
+
+        <!-- Blue cube (slot 2) -->
+        <body name="box_blue" pos="-0.20 0.72 0.05">
+            <joint name="blue_box_joint" type="free" frictionloss="0.01" />
+            <inertial pos="0 0 0" mass="0.05" diaginertia="0.002 0.002 0.002" />
+            <geom condim="4" solimp="2 1 0.01" solref="0.01 1" friction="1 0.005 0.0001" pos="0 0 0"
+                size="0.02 0.02 0.02" type="box" name="blue_box" rgba="0 0.2 1 1" />
+            <site name="cube_blue_site" pos="0.01 0.01 0.01" />
+        </body>
+
+        <!-- Single bin -->
+        <body name="bin" pos="-0.2 0.7 0.001">
+            <geom name="bin_wall"  type="box" size="0.045 0.005 0.03" pos=" 0.00  0.045 0.03" />
+            <geom name="bin_wall2" type="box" size="0.045 0.005 0.03" pos=" 0.00 -0.045 0.03" />
+            <geom name="bin_wall3" type="box" size="0.005 0.045 0.03" pos=" 0.045  0.00 0.03" />
+            <geom name="bin_wall4" type="box" size="0.005 0.045 0.03" pos="-0.045  0.00 0.03" />
+            <geom name="bin_floor" type="box" size="0.045 0.045 0.005" pos="0 0 -0.005" />
+            <site name="bin_center" pos="0 0 0.02" />
+        </body>
+
+    </worldbody>
+
+    <!-- qpos layout: 6 arm joints, then 3 × 7 free-joint (pos3 + quat4) for red, green, blue -->
+    <keyframe>
+        <key name="student_start"
+            qpos="8.69142e-10 -1.56413 1.57276 1.57694 -1.04066e-07 8.20607e-06
+                   -0.20 0.35 0.02 1 0 0 0
+                   -0.20 0.45 0.02 1 0 0 0
+                   -0.20 0.55 0.02 1 0 0 0"
+            ctrl="0 -1.573 1.57 1.577 0 0" />
+    </keyframe>
+</mujoco>

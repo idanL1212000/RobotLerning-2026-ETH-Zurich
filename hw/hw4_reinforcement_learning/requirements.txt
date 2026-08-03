@@ -1,0 +1,9 @@
+numpy>=1.24
+matplotlib>=3.7
+torch>=2.0
+gymnasium>=0.29
+tqdm
+moviepy
+pygame
+mujoco
+tensorboard==2.20.0

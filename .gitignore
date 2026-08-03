@@ -1,0 +1,17 @@
+# Lecture recordings - too big for git, keep them local.
+# The slide PDFs extracted from them are committed.
+lectures/*.mp4
+lectures/*.mkv
+lectures/*.webm
+lectures/*.mov
+lectures/*.avi
+lectures/*.m4v
+lectures/*.mpg
+lectures/*.mpeg
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
