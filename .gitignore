@@ -9,6 +9,9 @@ lectures/*.m4v
 lectures/*.mpg
 lectures/*.mpeg
 
+# Downloaded datasets (e.g. MNIST) - fetched by the notebooks, keep local.
+hw/**/data/
+
 # Python
 __pycache__/
 *.py[cod]
