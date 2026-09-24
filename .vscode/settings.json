@@ -1,0 +1,10 @@
+{
+  // Always use the project venv; stops VSCode probing the system Python 3.13,
+  // whose slow env-var activation contributed to the kernel start timeout.
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/Scripts/python.exe",
+
+  // Default is 60000ms, and the failure logged "Waited 60009ms". A cold-start
+  // import of a torch venv on this machine's slow disk, with several notebooks
+  // auto-starting kernels at once, can exceed that.
+  "jupyter.jupyterLaunchTimeout": 180000
+}
